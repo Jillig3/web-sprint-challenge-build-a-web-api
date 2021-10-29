@@ -9,7 +9,7 @@ const Actions = require('../actions/actions-model');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-    Projects.get(req.query)
+    Projects.get()
     .then(projects => {
         res.status(200).json(projects);
     })
@@ -114,7 +114,7 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-router.get('/:id/actions', async (req, res, next) => {
+router.get('/:id/actions', async (req, res,) => {
     try {
         const project = await Projects.get(req.params.id)
         if (!project) {
