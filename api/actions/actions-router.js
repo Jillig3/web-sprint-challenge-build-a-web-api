@@ -2,7 +2,7 @@
 const express = require('express');
 const {
     handleError,
-} = require('./actions-middleware');
+} = require('./actions-middlware');
 const Actions = require('./actions-model');
 const router = express.Router()
 

@@ -7,9 +7,19 @@ function handleError(err, req, res, next) {
       message: err.message,
       stack: err.stack,
     })
+}
+
+function logger(req, res, next) {
+    const timestamp = new Date().toLocaleString()
+    // DO YOUR MAGIC
+    const method = req.method
+    const url = req.originalUrl
+    console.log( `[${timestamp}] ${method} to ${url}`);
+    next()
   }
 
 
   module.exports = {
       handleError,
+      logger,
   }
